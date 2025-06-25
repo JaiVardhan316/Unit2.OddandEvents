@@ -1,0 +1,7 @@
+.number-box {
+  width: 800px; 
+  height: 40px;
+  border: 2px solid black;
+  display: inline-block;
+  margin: auto;
+}
