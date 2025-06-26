@@ -27,8 +27,8 @@ function numberForm() {
       <input name="amount" type="number"/> 
     </label>
     <button type="submit">Add number</button>
-    <button id="move1">Sort 1</button>
-    <button id="moveAll">Sort All</button>
+    <button type="button" id="move1">Sort 1</button>
+    <button type="button" id="moveAll">Sort All</button>
   `;
   $form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -39,7 +39,7 @@ function numberForm() {
       addNum(amount);
     }
   });
-  $form.querySelector("#sort1").addEventListener("click", () => {
+  $form.querySelector("#move1").addEventListener("click", () => {
     if (nums.length > 0) {
       const num = nums.shift();
       (num % 2 === 0 ? evens : odds).push(num);
@@ -47,7 +47,7 @@ function numberForm() {
     }
   });
   $form.querySelector("#moveAll").addEventListener("click", () => {
-    if (nums.length > 0) {
+    while (nums.length > 0) {
       const num = nums.shift();
       (num % 2 === 0 ? evens : odds).push(num);
       render();
